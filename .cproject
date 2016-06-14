@@ -40,11 +40,12 @@
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/core/include/opencv2"/>
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/include/opencv"/>
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/include/opencv2"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/photo/include"/>
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/highgui/include"/>
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/imgproc/include"/>
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/imgcodecs/include"/>
-									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/objdetect/include"/>
-									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/videoio/include"/>
+									<listOptionValue builtIn="false" value=""/>
+									<listOptionValue builtIn="false" value=""/>
 								</option>
 								<option id="gnu.cpp.compiler.option.include.files.1342740449" name="Include files (-include)" superClass="gnu.cpp.compiler.option.include.files" useByScannerDiscovery="false"/>
 								<option id="gnu.cpp.compiler.option.dialect.std.1131133450" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
@@ -67,6 +68,7 @@
 									<listOptionValue builtIn="false" value="opencv_imgproc"/>
 									<listOptionValue builtIn="false" value="opencv_highgui"/>
 									<listOptionValue builtIn="false" value="opencv_objdetect"/>
+									<listOptionValue builtIn="false" value="opencv_photo"/>
 								</option>
 								<option id="gnu.cpp.link.option.flags.711090669" name="Linker flags" superClass="gnu.cpp.link.option.flags" value=" -pthread" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1237544523" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
@@ -91,6 +93,7 @@
 								<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/include/opencv2"/>
 								<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/highgui/include"/>
 								<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/imgproc/include"/>
+								<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/photo/include"/>
 								<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/imgcodecs/include"/>
 								<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/objdetect/include"/>
 								<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/videoio/include"/>
@@ -190,4 +193,5 @@
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 </cproject>
