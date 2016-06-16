@@ -159,7 +159,7 @@ std::vector <cv::Point2f> get_points(const dlib::full_object_detection& d)
     std::vector <cv::Point2f> points;
     for (int i = 0; i < 68; ++i)
     {
-        points.push_back(cv::Point2f(d.part(i).x(), d.part(i).y()));
+    	points.push_back(cv::Point2f(d.part(i).x(), d.part(i).y()));
     }
 
     return points;
@@ -270,10 +270,12 @@ int capture(cv::VideoCapture cap, cv::Mat spook,  std::vector<Point2f> spookpoin
         Mat img2 = spook;
         Mat img1Warped = img2.clone();
 
+        /*
         dlib::image_window win_imcv;
         cv_image<bgr_pixel> imcv(im);
         win_imcv.set_image(imcv);
         while(!win_imcv.is_closed()){}
+		*/
 
         cout << "Finding facial landmarks." << endl;
 
@@ -281,6 +283,18 @@ int capture(cv::VideoCapture cap, cv::Mat spook,  std::vector<Point2f> spookpoin
         std::vector<Point2f> points1, points2;
         points1 = get_points(shape);
         points2 = spookpoints;
+
+        //calculate forhead left
+        points1.push_back(cv::Point2f((points1[5].x+points1[18].x)/2,points1[18].y-0.25*(points1[5].y-points1[18].y)));
+        points2.push_back(cv::Point2f((points2[5].x+points2[18].x)/2,points2[18].y-0.25*(points2[5].y-points2[18].y)));
+
+        //calculate forhead middle
+        points1.push_back(cv::Point2f((points1[8].x+points1[27].x)/2,points1[27].y-0.25*(points1[8].y-points1[27].y)));
+        points2.push_back(cv::Point2f((points2[8].x+points2[27].x)/2,points2[27].y-0.25*(points2[8].y-points2[27].y)));
+
+        //calculate forhead right
+        points1.push_back(cv::Point2f((points1[11].x+points1[25].x)/2,points1[25].y-0.25*(points1[11].y-points1[25].y)));
+        points2.push_back(cv::Point2f((points2[11].x+points2[25].x)/2,points2[25].y-0.25*(points2[11].y-points2[25].y)));
 
         //convert Mat to float data type
         img1.convertTo(img1, CV_32F);
@@ -323,6 +337,8 @@ int capture(cv::VideoCapture cap, cv::Mat spook,  std::vector<Point2f> spookpoin
                 warpTriangle(img1, img1Warped, t1, t2);
        	}
 
+        img1Warped.convertTo(img1Warped, CV_8UC3);
+
         cout << "Calculating mask." << endl;
 
         // Calculate mask
@@ -338,33 +354,50 @@ int capture(cv::VideoCapture cap, cv::Mat spook,  std::vector<Point2f> spookpoin
 
         // Clone seamlessly.
         Rect r = boundingRect(hull2);
-        Point center = (r.tl() + r.br()) / 2;
+        //Point center = (r.tl() + r.br()) / 2;
 
-        Mat output;
+        cv::Mat imgtest1, imgtest2, masktest, output;
+        imgtest1 = img2(r);
+        imgtest2 = img1Warped(r);
+        masktest = mask(r);
+
+        dlib::image_window win_r1, win_r2;
+        cv_image<bgr_pixel> o_1(imgtest1);
+        cv_image<bgr_pixel> o_2(imgtest2);
+        win_r1.set_image(o_1);
+        win_r2.set_image(o_2);
+        while(!win_r1.is_closed()){}
+        while(!win_r2.is_closed()){}
+
+        Point centertest = Point(imgtest1.cols / 2,imgtest1.rows / 2);
+
+        cv::seamlessClone(imgtest2,imgtest1, masktest, centertest, output, MONOCHROME_TRANSFER);
+
+		output.copyTo(img1Warped(r));
+
+        /*
         img1Warped.convertTo(img1Warped, CV_8UC3);
-
-        dlib::image_window win_imwarpcv;
-        cv_image<bgr_pixel> imwarpcv(img1Warped);
-        win_imwarpcv.set_image(imwarpcv);
-        while(!win_imwarpcv.is_closed()){}
 
         cout << "Applying seamless clone." << endl;
 
+        cv::Mat output;
         cv::seamlessClone(img1Warped,img2, mask, center, output, NORMAL_CLONE);
-        //img1Warped.copyTo(output,mask);
+        */
+
         //imshow("Face Swapped", output);
         //waitKey(0);
         //destroyAllWindows();
 
 
-        cout << "Merging back with original spook." << endl;
+        //cout << "Merging back with original spook." << endl;
 
-        cv::addWeighted( output, 0.75, spook, 0.25, 0.0, output);
+        //cv::addWeighted( output, 0.75, spook, 0.25, 0.0, output);
 
-        dlib::image_window win_result;
-        cv_image<bgr_pixel> outputcv(output);
-        win_result.set_image(outputcv);
-        while(!win_result.is_closed()){}
+
+        dlib::image_window win_result2;
+        cv_image<bgr_pixel> outputcv2(img1Warped);
+        win_result2.set_image(outputcv2);
+        while(!win_result2.is_closed()){}
 
         /*
         cout << "Displaying on screen..." << endl;
