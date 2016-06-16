@@ -199,7 +199,7 @@ void render_face (cv::Mat &img, const dlib::full_object_detection& d)
 }
 
 int capture(cv::VideoCapture cap, cv::Mat spook,  std::vector<Point2f> spookpoints, frontal_face_detector detector, shape_predictor pose_model){
-	#define FACE_DOWNSAMPLE_RATIO 1
+	#define FACE_DOWNSAMPLE_RATIO 4
 
     std::vector<dlib::rectangle> faces;
     cv::Mat im;
@@ -248,6 +248,7 @@ int capture(cv::VideoCapture cap, cv::Mat spook,  std::vector<Point2f> spookpoin
             return capture(cap, spook, spookpoints, detector, pose_model);
         }
         full_object_detection shape;
+        cout << "There were " << faces.size() << " faces detected." << endl;
         for (unsigned long i = 0; i < faces.size(); ++i)
         {
         	// Resize obtained rectangle for full resolution image.
@@ -269,6 +270,13 @@ int capture(cv::VideoCapture cap, cv::Mat spook,  std::vector<Point2f> spookpoin
         Mat img2 = spook;
         Mat img1Warped = img2.clone();
 
+        dlib::image_window win_imcv;
+        cv_image<bgr_pixel> imcv(im);
+        win_imcv.set_image(imcv);
+        while(!win_imcv.is_closed()){}
+
+        cout << "Finding facial landmarks." << endl;
+
         //Read points
         std::vector<Point2f> points1, points2;
         points1 = get_points(shape);
@@ -283,18 +291,24 @@ int capture(cv::VideoCapture cap, cv::Mat spook,  std::vector<Point2f> spookpoin
         std::vector<Point2f> hull2;
         std::vector<int> hullIndex;
 
+        cout << "Finding convex hull." << endl;
+
         convexHull(points2, hullIndex, false, false);
 
-        for(int i = 0; i < hullIndex.size(); i++)
+        for(int i = 0; i < (int)hullIndex.size(); i++)
         {
             hull1.push_back(points1[hullIndex[i]]);
             hull2.push_back(points2[hullIndex[i]]);
         }
 
+        cout << "Finding delaunay triangulation." << endl;
+
         // Find delaunay triangulation for points on the convex hull
         std::vector< std::vector<int> > dt;
         Rect rect(0, 0, img1Warped.cols, img1Warped.rows);
         calculateDelaunayTriangles(rect, hull2, dt);
+
+        cout << "Applying affine transformation." << endl;
 
         // Apply affine transformation to Delaunay triangles
         for(size_t i = 0; i < dt.size(); i++)
@@ -309,9 +323,11 @@ int capture(cv::VideoCapture cap, cv::Mat spook,  std::vector<Point2f> spookpoin
                 warpTriangle(img1, img1Warped, t1, t2);
        	}
 
+        cout << "Calculating mask." << endl;
+
         // Calculate mask
         std::vector<Point> hull8U;
-        for(int i = 0; i < hull2.size(); i++)
+        for(int i = 0; i < (int)hull2.size(); i++)
         {
             Point pt(hull2[i].x, hull2[i].y);
             hull8U.push_back(pt);
@@ -326,11 +342,29 @@ int capture(cv::VideoCapture cap, cv::Mat spook,  std::vector<Point2f> spookpoin
 
         Mat output;
         img1Warped.convertTo(img1Warped, CV_8UC3);
-        cv::seamlessClone(img1Warped,img2, mask, center, output, NORMAL_CLONE);
 
-        imshow("Face Swapped", output);
-        waitKey(0);
-        destroyAllWindows();
+        dlib::image_window win_imwarpcv;
+        cv_image<bgr_pixel> imwarpcv(img1Warped);
+        win_imwarpcv.set_image(imwarpcv);
+        while(!win_imwarpcv.is_closed()){}
+
+        cout << "Applying seamless clone." << endl;
+
+        cv::seamlessClone(img1Warped,img2, mask, center, output, NORMAL_CLONE);
+        //img1Warped.copyTo(output,mask);
+        //imshow("Face Swapped", output);
+        //waitKey(0);
+        //destroyAllWindows();
+
+
+        cout << "Merging back with original spook." << endl;
+
+        cv::addWeighted( output, 0.75, spook, 0.25, 0.0, output);
+
+        dlib::image_window win_result;
+        cv_image<bgr_pixel> outputcv(output);
+        win_result.set_image(outputcv);
+        while(!win_result.is_closed()){}
 
         /*
         cout << "Displaying on screen..." << endl;
