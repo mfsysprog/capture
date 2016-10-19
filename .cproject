@@ -168,16 +168,19 @@
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.base.275660722" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.base">
 								<option id="gnu.cpp.link.option.libs.1488410247" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="X11"/>
-									<listOptionValue builtIn="false" value="opencv-core"/>
-									<listOptionValue builtIn="false" value="opencv-ml"/>
-									<listOptionValue builtIn="false" value="opencv-imgcodecs"/>
-									<listOptionValue builtIn="false" value="opencv-videoio"/>
-									<listOptionValue builtIn="false" value="opencv-imgproc"/>
-									<listOptionValue builtIn="false" value="opencv-highgui"/>
-									<listOptionValue builtIn="false" value="opencv-objdetect"/>
-									<listOptionValue builtIn="false" value="opencv-photo"/>
+									<listOptionValue builtIn="false" value="opencv_core"/>
+									<listOptionValue builtIn="false" value="opencv_ml"/>
+									<listOptionValue builtIn="false" value="opencv_imgcodecs"/>
+									<listOptionValue builtIn="false" value="opencv_videoio"/>
+									<listOptionValue builtIn="false" value="opencv_imgproc"/>
+									<listOptionValue builtIn="false" value="opencv_highgui"/>
+									<listOptionValue builtIn="false" value="opencv_objdetect"/>
+									<listOptionValue builtIn="false" value="opencv_photo"/>
 								</option>
 								<option id="gnu.cpp.link.option.flags.1319181611" name="Linker flags" superClass="gnu.cpp.link.option.flags" value=" -pthread" valueType="string"/>
+								<option id="gnu.cpp.link.option.paths.775507526" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="/home/erik/libopencv/lib"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.956378441" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -194,8 +197,11 @@
 							<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.208519896" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 						</tool>
 					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.exe.release.1554127224.315924152" name="face_dlib_default.cpp" rcbsApplicability="disable" resourcePath="src/face_dlib_default.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.base.484467554.377998666">
+						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.base.484467554.377998666" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base.484467554"/>
+					</fileInfo>
 					<sourceEntries>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="face_dlib_default.cpp|face.cpp|makeLED.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

@@ -284,15 +284,15 @@ int capture(cv::VideoCapture cap, cv::Mat spook,  std::vector<Point2f> spookpoin
         points1 = get_points(shape);
         points2 = spookpoints;
 
-        //calculate forhead left
+        //calculate forehead left
         points1.push_back(cv::Point2f((points1[5].x+points1[18].x)/2,points1[18].y-0.25*(points1[5].y-points1[18].y)));
         points2.push_back(cv::Point2f((points2[5].x+points2[18].x)/2,points2[18].y-0.25*(points2[5].y-points2[18].y)));
 
-        //calculate forhead middle
+        //calculate forehead middle
         points1.push_back(cv::Point2f((points1[8].x+points1[27].x)/2,points1[27].y-0.25*(points1[8].y-points1[27].y)));
         points2.push_back(cv::Point2f((points2[8].x+points2[27].x)/2,points2[27].y-0.25*(points2[8].y-points2[27].y)));
 
-        //calculate forhead right
+        //calculate forehead right
         points1.push_back(cv::Point2f((points1[11].x+points1[25].x)/2,points1[25].y-0.25*(points1[11].y-points1[25].y)));
         points2.push_back(cv::Point2f((points2[11].x+points2[25].x)/2,points2[25].y-0.25*(points2[11].y-points2[25].y)));
 
