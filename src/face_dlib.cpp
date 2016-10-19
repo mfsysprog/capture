@@ -36,9 +36,9 @@
 #include <dlib/image_processing.h>
 #include <dlib/image_io.h>
 #include <dlib/gui_widgets.h>
-#include <iostream>
-#include <stdlib.h>
-#include <fstream>
+//#include <iostream>
+//#include <stdlib.h>
+//#include <fstream>
 
 using namespace dlib;
 using namespace std;
@@ -207,8 +207,8 @@ int capture(cv::VideoCapture cap, cv::Mat spook,  std::vector<Point2f> spookpoin
 
     // Grab and process frames until the main window is closed by the user.
     	cout << "Grabbing a frame..." << endl;
-    	cap.set(CV_CAP_PROP_FRAME_WIDTH,1280);   // width pixels
-    	cap.set(CV_CAP_PROP_FRAME_HEIGHT,960);   // height pixels
+    	cap.set(CV_CAP_PROP_FRAME_WIDTH,1920);   // width pixels
+    	cap.set(CV_CAP_PROP_FRAME_HEIGHT,1080);   // height pixels
     	if(!cap.isOpened()){   // connect to the camera
     	         cout << "Failed to connect to the camera." << endl;
     	         return 1;
