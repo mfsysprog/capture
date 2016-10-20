@@ -361,13 +361,13 @@ int capture(cv::VideoCapture cap, cv::Mat spook,  std::vector<Point2f> spookpoin
         imgtest2 = img1Warped(r);
         masktest = mask(r);
 
-        dlib::image_window win_r1, win_r2;
-        cv_image<bgr_pixel> o_1(imgtest1);
-        cv_image<bgr_pixel> o_2(imgtest2);
-        win_r1.set_image(o_1);
-        win_r2.set_image(o_2);
-        while(!win_r1.is_closed()){}
-        while(!win_r2.is_closed()){}
+        //dlib::image_window win_r1, win_r2;
+        //cv_image<bgr_pixel> o_1(imgtest1);
+        //cv_image<bgr_pixel> o_2(imgtest2);
+        //win_r1.set_image(o_1);
+        //win_r2.set_image(o_2);
+        //while(!win_r1.is_closed()){}
+        //while(!win_r2.is_closed()){}
 
         Point centertest = Point(imgtest1.cols / 2,imgtest1.rows / 2);
 

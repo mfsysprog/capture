@@ -168,6 +168,9 @@
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.base.275660722" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.base">
 								<option id="gnu.cpp.link.option.libs.1488410247" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="X11"/>
+									<listOptionValue builtIn="false" value="sfml-system"/>
+									<listOptionValue builtIn="false" value="sfml-window"/>
+									<listOptionValue builtIn="false" value="sfml-graphics"/>
 									<listOptionValue builtIn="false" value="opencv_core"/>
 									<listOptionValue builtIn="false" value="opencv_ml"/>
 									<listOptionValue builtIn="false" value="opencv_imgcodecs"/>
@@ -197,11 +200,8 @@
 							<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.208519896" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 						</tool>
 					</fileInfo>
-					<fileInfo id="cdt.managedbuild.config.gnu.cross.exe.release.1554127224.315924152" name="face_dlib_default.cpp" rcbsApplicability="disable" resourcePath="src/face_dlib_default.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.base.484467554.377998666">
-						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.base.484467554.377998666" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base.484467554"/>
-					</fileInfo>
 					<sourceEntries>
-						<entry excluding="face_dlib_default.cpp|face.cpp|makeLED.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="face_dlib.cpp|face_dlib_default.cpp|face.cpp|makeLED.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
