@@ -8,6 +8,7 @@
 using namespace sf;
 using namespace std;
 
+
 #define FACE_DOWNSAMPLE_RATIO 4
 
 void captureThread(){
