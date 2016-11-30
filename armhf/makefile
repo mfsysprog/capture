@@ -55,7 +55,7 @@ clean:
 	-@echo ' '
 
 post-build:
-	-scp BBBTest pi@192.168.3.2:/home/pi/deploy
+	-scp BBBTest erik@192.168.3.9:/home/erik/deploy
 	-@echo ' '
 
 .PHONY: all clean dependents

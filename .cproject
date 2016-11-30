@@ -14,7 +14,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cross.exe.debug.1653075043" name="armhf" parent="cdt.managedbuild.config.gnu.cross.exe.debug" postbuildStep="scp BBBTest pi@192.168.3.2:/home/pi/deploy">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cross.exe.debug.1653075043" name="armhf" parent="cdt.managedbuild.config.gnu.cross.exe.debug" postbuildStep="scp BBBTest erik@192.168.3.9:/home/erik/deploy">
 					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.1653075043." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.exe.debug.1556080194" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.exe.debug">
 							<option id="cdt.managedbuild.option.gnu.cross.prefix.1867268942" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" value="arm-linux-gnueabihf-" valueType="string"/>
@@ -29,31 +29,34 @@
 								</option>
 								<option id="gnu.c.compiler.option.dialect.std.1996771478" name="Language standard" superClass="gnu.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.c.compiler.dialect.default" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.misc.other.779298227" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0" valueType="string"/>
-								<option id="gnu.c.compiler.option.dialect.flags.1232162069" name="Other dialect flags" superClass="gnu.c.compiler.option.dialect.flags" useByScannerDiscovery="true" value=" -std=c++11" valueType="string"/>
+								<option id="gnu.c.compiler.option.dialect.flags.1232162069" name="Other dialect flags" superClass="gnu.c.compiler.option.dialect.flags" useByScannerDiscovery="true" value=" -std=c++14" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1840374107" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.36804178" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
-								<option id="gnu.cpp.compiler.option.optimization.level.157421059" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
-								<option id="gnu.cpp.compiler.option.debugging.level.1402863907" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.optimization.level.157421059" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.1402863907" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.2070781103" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value=""/>
-									<listOptionValue builtIn="false" value="/home/erik/dlib-18.18"/>
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/core/include"/>
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/core/include/opencv2"/>
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/include/opencv"/>
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/include/opencv2"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/imgproc/include"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/features2d/include"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/calib3d/include"/>
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/photo/include"/>
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/highgui/include"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/video/include"/>
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/videoio/include"/>
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/objdetect/include"/>
-									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/imgproc/include"/>
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/imgcodecs/include"/>
+									<listOptionValue builtIn="false" value="/home/erik/dlib-18.18"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.include.files.1342740449" name="Include files (-include)" superClass="gnu.cpp.compiler.option.include.files" useByScannerDiscovery="false"/>
 								<option id="gnu.cpp.compiler.option.dialect.std.1131133450" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
-								<option id="gnu.cpp.compiler.option.other.other.296313880" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.other.other.296313880" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -mcpu=cortex-a8" valueType="string"/>
 								<option id="gnu.cpp.compiler.option.other.verbose.475092534" name="Verbose (-v)" superClass="gnu.cpp.compiler.option.other.verbose" useByScannerDiscovery="false" value="true" valueType="boolean"/>
-								<option id="gnu.cpp.compiler.option.dialect.flags.2131850320" name="Other dialect flags" superClass="gnu.cpp.compiler.option.dialect.flags" useByScannerDiscovery="true" value=" -std=c++11" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.dialect.flags.2131850320" name="Other dialect flags" superClass="gnu.cpp.compiler.option.dialect.flags" useByScannerDiscovery="true" value=" -std=c++14" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.1141279023" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.2096237705" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.119563947" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker"/>
@@ -68,14 +71,6 @@
 									<listOptionValue builtIn="false" value="sfml-window"/>
 									<listOptionValue builtIn="false" value="sfml-graphics"/>
 									<listOptionValue builtIn="false" value="sfml-audio"/>
-									<listOptionValue builtIn="false" value="opencv_core"/>
-									<listOptionValue builtIn="false" value="opencv_ml"/>
-									<listOptionValue builtIn="false" value="opencv_imgcodecs"/>
-									<listOptionValue builtIn="false" value="opencv_videoio"/>
-									<listOptionValue builtIn="false" value="opencv_imgproc"/>
-									<listOptionValue builtIn="false" value="opencv_highgui"/>
-									<listOptionValue builtIn="false" value="opencv_objdetect"/>
-									<listOptionValue builtIn="false" value="opencv_photo"/>
 								</option>
 								<option id="gnu.cpp.link.option.flags.711090669" name="Linker flags" superClass="gnu.cpp.link.option.flags" value=" -pthread" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1237544523" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
@@ -114,8 +109,9 @@
 							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.964281152" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.1653075043.1876984873" name="FaceSwapper.h" rcbsApplicability="disable" resourcePath="src/FaceSwapper.h" toolsToInvoke=""/>
 					<sourceEntries>
-						<entry excluding="src/face_dlib_default.cpp|src/face.cpp|src/makeLED.cpp|src/face_dlib.cpp|src/BBBTest.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="src/FaceSwapper.h|src/FaceSwapper.cpp|src/source.cpp|src/sfml.cpp|src/FaceSwap|src/face_dlib_default.cpp|src/face.cpp|src/makeLED.cpp|src/face_dlib.cpp|src/BBBTest.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -140,7 +136,7 @@
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.target.gnu.platform.base.1699406283" name="Debug Platform" osList="linux,hpux,aix,qnx" superClass="cdt.managedbuild.target.gnu.platform.base"/>
 							<builder autoBuildTarget="all" buildPath="${workspace_loc:/BBBTest}/x86" cleanBuildTarget="clean" enableAutoBuild="false" enableCleanBuild="true" enabledIncrementalBuild="true" id="cdt.managedbuild.target.gnu.builder.base.1002746223" incrementalBuildTarget="all" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" parallelBuildOn="false" superClass="cdt.managedbuild.target.gnu.builder.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.archiver.base.2051705925" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
-							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.base.484467554" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base">
+							<tool command="g++" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="cdt.managedbuild.tool.gnu.cpp.compiler.base.484467554" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base">
 								<option id="gnu.cpp.compiler.option.optimization.level.765955429" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.debugging.level.1043128812" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.dialect.std.627607494" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
@@ -149,19 +145,20 @@
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/core/include/opencv2"/>
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/include/opencv"/>
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/include/opencv2"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/imgproc/include"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/features2d/include"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/calib3d/include"/>
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/photo/include"/>
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/highgui/include"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/video/include"/>
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/videoio/include"/>
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/objdetect/include"/>
-									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/imgproc/include"/>
 									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/imgcodecs/include"/>
 									<listOptionValue builtIn="false" value="/home/erik/dlib-18.18"/>
-									<listOptionValue builtIn="false" value=""/>
-									<listOptionValue builtIn="false" value=""/>
 								</option>
 								<option id="gnu.cpp.compiler.option.other.verbose.1368722917" name="Verbose (-v)" superClass="gnu.cpp.compiler.option.other.verbose" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option id="gnu.cpp.compiler.option.other.other.1677871855" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0" valueType="string"/>
-								<option id="gnu.cpp.compiler.option.dialect.flags.1010185912" name="Other dialect flags" superClass="gnu.cpp.compiler.option.dialect.flags" useByScannerDiscovery="true" value=" -std=c++11" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.dialect.flags.1010185912" name="Other dialect flags" superClass="gnu.cpp.compiler.option.dialect.flags" useByScannerDiscovery="true" value=" -std=c++14" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.349930079" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.base.1141307586" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.base">
@@ -190,6 +187,7 @@
 								</option>
 								<option id="gnu.cpp.link.option.flags.1319181611" name="Linker flags" superClass="gnu.cpp.link.option.flags" value=" -pthread" valueType="string"/>
 								<option id="gnu.cpp.link.option.paths.775507526" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="/usr/lib"/>
 									<listOptionValue builtIn="false" value="/home/erik/libopencv/lib"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.956378441" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
@@ -202,8 +200,129 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.exe.release.1554127224.1597257655" name="FaceSwapper.h" rcbsApplicability="disable" resourcePath="src/FaceSwapper.h" toolsToInvoke=""/>
 					<sourceEntries>
-						<entry excluding="face_dlib.cpp|makeLED.cpp|face_dlib_default.cpp|face.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="FaceSwap|BBBTest.cpp|face_dlib.cpp|makeLED.cpp|face_dlib_default.cpp|face.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="cdt.managedbuild.config.gnu.cross.exe.debug.1653075043.666709419">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cross.exe.debug.1653075043.666709419" moduleId="org.eclipse.cdt.core.settings" name="armpi">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="git clone https://github.com/raspberrypi/tools.git --depth=1 pitools" id="cdt.managedbuild.config.gnu.cross.exe.debug.1653075043.666709419" name="armpi" parent="cdt.managedbuild.config.gnu.cross.exe.debug" postbuildStep="scp BBBTest pi@192.168.3.2:/home/pi/deploy">
+					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.1653075043.666709419." name="/" resourcePath="">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.exe.debug.2038011537" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.exe.debug">
+							<option id="cdt.managedbuild.option.gnu.cross.prefix.1910771583" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" value="arm-linux-gnueabihf-" valueType="string"/>
+							<option id="cdt.managedbuild.option.gnu.cross.path.896369814" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path" value="/home/erik/pidev/pitools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/bin" valueType="string"/>
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.targetPlatform.gnu.cross.698041464" isAbstract="false" osList="all" superClass="cdt.managedbuild.targetPlatform.gnu.cross"/>
+							<builder buildPath="${workspace_loc:/BBBTest}/Debug" id="cdt.managedbuild.builder.gnu.cross.1336291604" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.builder.gnu.cross"/>
+							<tool command="gcc" id="cdt.managedbuild.tool.gnu.cross.c.compiler.1161193707" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler">
+								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.1196632201" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.c.optimization.level.most" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.193688277" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.include.paths.913693720" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.dialect.std.939782341" name="Language standard" superClass="gnu.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.c.compiler.dialect.default" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.misc.other.1606642960" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0" valueType="string"/>
+								<option id="gnu.c.compiler.option.dialect.flags.735259279" name="Other dialect flags" superClass="gnu.c.compiler.option.dialect.flags" useByScannerDiscovery="true" value=" -std=c++14" valueType="string"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.31273665" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.1211605111" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
+								<option id="gnu.cpp.compiler.option.optimization.level.1496408448" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.1804267676" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.include.paths.777815200" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/core/include"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/core/include/opencv2"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/include/opencv"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/include/opencv2"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/imgproc/include"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/features2d/include"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/flann/include"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/calib3d/include"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/photo/include"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/highgui/include"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/video/include"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/videoio/include"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/objdetect/include"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/imgcodecs/include"/>
+									<listOptionValue builtIn="false" value="/home/erik/dlib-18.18"/>
+									<listOptionValue builtIn="false" value="/usr/include"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.include.files.936440550" name="Include files (-include)" superClass="gnu.cpp.compiler.option.include.files" useByScannerDiscovery="false"/>
+								<option id="gnu.cpp.compiler.option.dialect.std.1330237873" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.other.other.649437695" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.other.verbose.1245823998" name="Verbose (-v)" superClass="gnu.cpp.compiler.option.other.verbose" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="gnu.cpp.compiler.option.dialect.flags.824129664" name="Other dialect flags" superClass="gnu.cpp.compiler.option.dialect.flags" useByScannerDiscovery="true" value=" -std=c++14" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.1863857221" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false"/>
+								<option id="gnu.cpp.compiler.option.debugging.gprof.1674146616" name="Generate gprof information (-pg)" superClass="gnu.cpp.compiler.option.debugging.gprof" useByScannerDiscovery="false" value="false" valueType="boolean"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.625735595" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1093472282" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.1891479304" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker">
+								<option id="gnu.cpp.link.option.paths.642524534" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="/home/erik/pidev/pitools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/arm-linux-gnueabihf/sysroot/usr/lib"/>
+									<listOptionValue builtIn="false" value="/usr/lib/arm-linux-gnueabihf"/>
+									<listOptionValue builtIn="false" value="/lib/arm-linux-gnueabihf"/>
+									<listOptionValue builtIn="false" value="/home/erik/opencv3/lib"/>
+								</option>
+								<option id="gnu.cpp.link.option.libs.337155193" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="X11"/>
+									<listOptionValue builtIn="false" value="sfml-system"/>
+									<listOptionValue builtIn="false" value="sfml-window"/>
+									<listOptionValue builtIn="false" value="sfml-graphics"/>
+									<listOptionValue builtIn="false" value="sfml-audio"/>
+								</option>
+								<option id="gnu.cpp.link.option.flags.1490970423" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-pthread -Wl,-rpath-link,/usr/lib/arm-linux-gnueabihf -Wl,-rpath-link,/lib/arm-linux-gnueabihf" valueType="string"/>
+								<option id="gnu.cpp.link.option.shared.1318715768" name="Shared (-shared)" superClass="gnu.cpp.link.option.shared" value="false" valueType="boolean"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.120965666" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.662561197" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver"/>
+							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.712206342" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.732425275" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.1653075043.666709419.src/face_dlib.cpp" name="face_dlib.cpp" rcbsApplicability="disable" resourcePath="src/face_dlib.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cross.cpp.compiler.2042755230">
+						<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.2042755230" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler.1211605111">
+							<option id="gnu.cpp.compiler.option.include.paths.234107931" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+								<listOptionValue builtIn="false" value="/usr/include/arm-linux-gnueabihf/c++/4.9"/>
+								<listOptionValue builtIn="false" value="/home/erik/dlib-18.18"/>
+								<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/core/include"/>
+								<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/core/include/opencv2"/>
+								<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/include/opencv"/>
+								<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/include/opencv2"/>
+								<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/highgui/include"/>
+								<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/imgproc/include"/>
+								<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/photo/include"/>
+								<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/imgcodecs/include"/>
+								<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/objdetect/include"/>
+								<listOptionValue builtIn="false" value="/home/erik/opencv-3.1.0/modules/videoio/include"/>
+							</option>
+							<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1880610498" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+						</tool>
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.1284052832.1554432264" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.47504323.209456508" name="Resource Custom Build Step Input Type">
+								<additionalInput kind="additionalinputdependency" paths=""/>
+							</inputType>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.964281152.345476930" name="Resource Custom Build Step Output Type"/>
+						</tool>
+					</fileInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.1653075043.666709419.781025260" name="FaceSwapper.h" rcbsApplicability="disable" resourcePath="src/FaceSwapper.h" toolsToInvoke=""/>
+					<sourceEntries>
+						<entry excluding="src/source.cpp|src/sfml.cpp|src/FaceSwapper.h|src/FaceSwapper.cpp|src/FaceSwap|src/face_dlib_default.cpp|src/face.cpp|src/makeLED.cpp|src/face_dlib.cpp|src/BBBTest.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -218,6 +337,8 @@
 		<configuration configurationName="Release">
 			<resource resourceType="PROJECT" workspacePath="/BBBTest"/>
 		</configuration>
+		<configuration configurationName="armpi"/>
+		<configuration configurationName="armhf"/>
 		<configuration configurationName="Debug">
 			<resource resourceType="PROJECT" workspacePath="/BBBTest"/>
 		</configuration>
@@ -232,19 +353,19 @@
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.release.1554127224;cdt.managedbuild.config.gnu.cross.exe.release.1554127224.;cdt.managedbuild.tool.gnu.c.compiler.base.1141307586;cdt.managedbuild.tool.gnu.c.compiler.input.1335627797">
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.release.1554127224;cdt.managedbuild.config.gnu.cross.exe.release.1554127224.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.1141031129;cdt.managedbuild.tool.gnu.cpp.compiler.input.584578838">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.release.1554127224;cdt.managedbuild.config.gnu.cross.exe.release.1554127224.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.1141031129;cdt.managedbuild.tool.gnu.cpp.compiler.input.584578838">
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.release.1554127224;cdt.managedbuild.config.gnu.cross.exe.release.1554127224.;cdt.managedbuild.tool.gnu.c.compiler.base.1141307586;cdt.managedbuild.tool.gnu.c.compiler.input.1335627797">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.1653075043;cdt.managedbuild.config.gnu.cross.exe.debug.1653075043.;cdt.managedbuild.tool.gnu.cross.c.compiler.1184629603;cdt.managedbuild.tool.gnu.c.compiler.input.1840374107">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.release.1554127224;cdt.managedbuild.config.gnu.cross.exe.release.1554127224.;cdt.managedbuild.tool.gnu.cross.c.compiler.465879019;cdt.managedbuild.tool.gnu.c.compiler.input.683660646">
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.1653075043;cdt.managedbuild.config.gnu.cross.exe.debug.1653075043.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.36804178;cdt.managedbuild.tool.gnu.cpp.compiler.input.2096237705">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.1653075043;cdt.managedbuild.config.gnu.cross.exe.debug.1653075043.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.36804178;cdt.managedbuild.tool.gnu.cpp.compiler.input.2096237705">
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.release.1554127224;cdt.managedbuild.config.gnu.cross.exe.release.1554127224.;cdt.managedbuild.tool.gnu.cross.c.compiler.465879019;cdt.managedbuild.tool.gnu.c.compiler.input.683660646">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.release.1554127224;cdt.managedbuild.config.gnu.cross.exe.release.1554127224.;cdt.managedbuild.tool.gnu.cpp.compiler.base.484467554;cdt.managedbuild.tool.gnu.cpp.compiler.input.349930079">

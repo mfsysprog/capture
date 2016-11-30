@@ -4,30 +4,20 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/sfml.cpp \
-/home/erik/dlib-18.18/dlib/all/source.cpp 
+../src/thread.cpp 
 
 OBJS += \
-./src/sfml.o \
-./src/source.o 
+./src/thread.o 
 
 CPP_DEPS += \
-./src/sfml.d \
-./src/source.d 
+./src/thread.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
 src/%.o: ../src/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: Cross G++ Compiler'
-	arm-linux-gnueabihf-g++ -std=c++11 -I/home/erik/dlib-18.18 -I/home/erik/opencv-3.1.0/modules/core/include -I/home/erik/opencv-3.1.0/modules/core/include/opencv2 -I/home/erik/opencv-3.1.0/include/opencv -I/home/erik/opencv-3.1.0/include/opencv2 -I/home/erik/opencv-3.1.0/modules/photo/include -I/home/erik/opencv-3.1.0/modules/highgui/include -I/home/erik/opencv-3.1.0/modules/videoio/include -I/home/erik/opencv-3.1.0/modules/objdetect/include -I/home/erik/opencv-3.1.0/modules/imgproc/include -I/home/erik/opencv-3.1.0/modules/imgcodecs/include -O3 -Wall -c -fmessage-length=0 -v -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
-	@echo 'Finished building: $<'
-	@echo ' '
-
-src/source.o: /home/erik/dlib-18.18/dlib/all/source.cpp
-	@echo 'Building file: $<'
-	@echo 'Invoking: Cross G++ Compiler'
-	arm-linux-gnueabihf-g++ -std=c++11 -I/home/erik/dlib-18.18 -I/home/erik/opencv-3.1.0/modules/core/include -I/home/erik/opencv-3.1.0/modules/core/include/opencv2 -I/home/erik/opencv-3.1.0/include/opencv -I/home/erik/opencv-3.1.0/include/opencv2 -I/home/erik/opencv-3.1.0/modules/photo/include -I/home/erik/opencv-3.1.0/modules/highgui/include -I/home/erik/opencv-3.1.0/modules/videoio/include -I/home/erik/opencv-3.1.0/modules/objdetect/include -I/home/erik/opencv-3.1.0/modules/imgproc/include -I/home/erik/opencv-3.1.0/modules/imgcodecs/include -O3 -Wall -c -fmessage-length=0 -v -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
+	arm-linux-gnueabihf-g++ -std=c++14 -I/home/erik/opencv-3.1.0/modules/core/include -I/home/erik/opencv-3.1.0/modules/core/include/opencv2 -I/home/erik/opencv-3.1.0/include/opencv -I/home/erik/opencv-3.1.0/include/opencv2 -I/home/erik/opencv-3.1.0/modules/imgproc/include -I/home/erik/opencv-3.1.0/modules/features2d/include -I/home/erik/opencv-3.1.0/modules/calib3d/include -I/home/erik/opencv-3.1.0/modules/photo/include -I/home/erik/opencv-3.1.0/modules/highgui/include -I/home/erik/opencv-3.1.0/modules/video/include -I/home/erik/opencv-3.1.0/modules/videoio/include -I/home/erik/opencv-3.1.0/modules/objdetect/include -I/home/erik/opencv-3.1.0/modules/imgcodecs/include -I/home/erik/dlib-18.18 -O0 -g3 -Wall -c -fmessage-length=0 -mcpu=cortex-a8 -v -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
